@@ -1,1 +1,0 @@
-## Sample app for http://ng-book.com
