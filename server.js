@@ -1,10 +1,6 @@
 'use strict';
 
-var express = require('express'),
-    path = require('path'),
-    fs = require('fs'),
-    http = require('http'),
-    mongoose = require('mongoose');
+var express = require('express');
 
 /**
  * Main application file
@@ -14,21 +10,8 @@ var express = require('express'),
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var config = require('./lib/config/config');
-var db = mongoose.connect(config.mongo.uri, config.mongo.options);
+var socket = require('./lib/socketio/socketio');
 
-// Bootstrap models
-var modelsPath = path.join(__dirname, 'lib/models');
-fs.readdirSync(modelsPath).forEach(function (file) {
-  if (/(.*)\.(js$|coffee$)/.test(file)) {
-    require(modelsPath + '/' + file);
-  }
-});
-
-// Populate empty DB with sample data
-require('./lib/config/dummydata');
-
-// Passport Configuration
-var passport = require('./lib/config/passport');
 
 // Setup Express
 var app = express();
@@ -40,12 +23,10 @@ var io = require('socket.io').listen(app.listen(config.port, config.ip, function
   console.log('Express server listening on %s:%d, in %s mode', config.ip, config.port, app.get('env'));
 }));
 
-io.sockets.on('connection', function (socket) {
-    socket.emit('message', { message: 'welcome to the chat' });
-    socket.on('send', function (data) {
-        io.sockets.emit('message', data);
-    });
-});
+
+io.sockets.on('connection', socket);
+
+
 
 // Expose app
 exports = module.exports = app;

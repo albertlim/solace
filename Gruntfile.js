@@ -1,4 +1,4 @@
-// Generated on 2014-05-30 using generator-angular-fullstack 1.4.2
+// Generated on 2014-05-31 using generator-angular-fullstack 1.4.3
 'use strict';
 
 // # Globbing

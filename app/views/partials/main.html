@@ -1,27 +1,57 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo <span ng-show="currentUser">{{ currentUser.name }}</span>!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    {{msg}}
+ 
+<div class="jumbotron1" ng-controller="MainCtrl" >
+    <div class="">
+        <div id="map"></div>
+        <div id="year" style="display:none;">1962</div>
+        <div class="explanation">
+            <h4>2014 Isla Vista killings </h4>
+		 
+            <div id="lightbox">
+                <h4 ng-model="write.body"
+                    class="chapter-main-text"
+                    medium-editor options='{"placeholder": "Start", "disableToolbar": false,  "disableReturn": true}'
+                    style="margin-top:30px; height:140px;"" >
+                </h4>
+                <h4 ng-model="write.longitude" 
+                    class="chapter-title"
+                    medium-editor options='{"placeholder": "longitude", "disableToolbar": false,  "disableReturn": true}'>
+                </h4>
+                <h4 ng-model="write.latitude" 
+                    class="chapter-title"
+                    medium-editor options='{"placeholder": "latitude", "disableToolbar": false,  "disableReturn": true}'>
+                </h4>
+                 <button ng-click="save()" type="button" class="btn btn-default publish-btn pull-right">Publish</button>
+            </div>
+        </div>
 
-    Always a pleasure scaffolding your apps.
-     <input id="send" type="button" value="submit" />
-     <input id="field" type="text" />
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
-</div>
-
-<div class="row marketing">
-  <div ng-repeat="thing in awesomeThings">
-      <h4>{{thing.name}}</h4>
-      <p>{{thing.info}}</p>
-     
+        <div id="msg" style="display:none;"></div>
       
-  </div>
+      
+        <div id="over_map">
+            <div class="list-group">
+                <div ng-repeat="event in recordedEvents.slice().reverse() track by $index">
+                     <a href="#" class="list-group-item ">
+                        <p class="list-group-item-text">{{event}}</p>
+                      </a>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <p class="lead">
+        {{msg}}
+    
+        <span ng-show="currentUser">{{ currentUser.name }}</span>
+     
+        <input id="field" type="text" />
+  </p>
 </div>
 
-<div class="footer">
-  <p>♥ from the Yeoman team</p>
-</div>
+<div>
+
+
+
+
+

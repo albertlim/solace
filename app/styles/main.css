@@ -14,14 +14,12 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 40px;
-  padding-bottom: 19px;
 }
 
 /* Custom page footer */
@@ -34,7 +32,7 @@ body {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    width: 95%;
   }
 }
 .container-narrow > hr {
@@ -42,8 +40,10 @@ body {
 }
 
 /* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
+.jumbotron1 {
+	padding: 10px;
+	overflow:hidden;
+	background-color:transparent;
   border-bottom: 1px solid #e5e5e5;
 }
 .jumbotron .btn {
@@ -70,10 +70,78 @@ body {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
+  div div.jumbotron1 {
     border-bottom: 0;
+    padding-right:10px;
+    padding-left:10px;
   }
+  
+  html, body {
+  margin: 0;
+  padding: 0;
+  background-color:black;
+}
+    #map {
+      width: 90%;
+      height: 650px;
+      position: absolute;
+    }
+    #year {
+      position: absolute;
+      top: 426px;
+      left: 528px;
+      font-size: 30px;
+      font-family: sans-serif;
+      text-shadow: 0.1em 0.1em 0.2em black;
+      color: white;
+    }
+    #msg {
+      position: absolute;
+      font-size: 30px;
+      font-family: sans-serif;
+      text-shadow: 0.1em 0.1em 0.2em black;
+      color: #d0d0ff;
+      top: 200px;
+      width: 600px;
+      text-align: center;
+    }
+    .explanation{
+         margin-left: 40px;
+        margin-top: 30px;
+        padding:15px;
+        width: 650px;
+        height: 480px;
+        border-radius: 5px;
+    }
+    
+   #lightbox {
+        margin-left: 40px;
+        margin-top: 30px;
+        padding:15px;
+        width: 450px;
+        height: 300px;
+        background-color: #ffffff;
+        opacity: 0.5;
+        border-radius: 5px;
+    }
+    
+    h4.chapter-main-text{
+        outline-color: white;
+    }
+    
+     #over_map { 
+        position: absolute;
+        top: 100px;
+        left: 675px;
+        z-index: 99;
+        color: white;
+    }
+    
+    div a.list-group-item{
+        background: transparent;
+        border:none;
+        color: white;
+    }
 }

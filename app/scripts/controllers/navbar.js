@@ -1,21 +1,11 @@
 'use strict';
 
-angular.module('solaceApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
+angular.module('c4tkApp')
+  .controller('NavbarCtrl', function ($scope, $location) {
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }, {
-      'title': 'Settings',
-      'link': '/settings'
     }];
-    
-    $scope.logout = function() {
-      Auth.logout()
-      .then(function() {
-        $location.path('/login');
-      });
-    };
     
     $scope.isActive = function(route) {
       return route === $location.path();

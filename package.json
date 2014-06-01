@@ -1,10 +1,9 @@
 {
-  "name": "solace",
+  "name": "c4tk",
   "version": "0.0.0",
   "dependencies": {
     "body-parser": "~1.0.0",
     "compression": "~1.0.1",
-    "connect-mongo": "mrzepinski/connect-mongo#2135988",
     "cookie-parser": "~1.0.1",
     "ejs": "~0.8.4",
     "errorhandler": "~1.0.0",
@@ -12,11 +11,9 @@
     "express-session": "~1.0.2",
     "lodash": "~2.4.1",
     "method-override": "~1.0.0",
-    "mongoose": "~3.8.8",
     "morgan": "~1.0.0",
-    "passport": "~0.2.0",
-    "passport-local": "~0.1.6",
-    "socket.io": "^1.0.2",
+    "medium-editor": "^1.8.8",
+    "node-cassandra-cql": "^0.4.4",
     "static-favicon": "~1.0.1"
   },
   "devDependencies": {
